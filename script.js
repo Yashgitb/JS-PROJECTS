@@ -38,6 +38,13 @@ buttons.forEach(button => {
        squareroot = Math.sqrt(squareroot);
        string = String(squareroot);
     }
+    else if (value === "+/-"){
+      let number = Number(string);
+      if(number>0){
+        number = -number;
+      }
+       string = String(number);
+    }
     else {
         string = string+value;        
     }
