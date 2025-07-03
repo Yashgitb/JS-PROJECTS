@@ -40,9 +40,7 @@ buttons.forEach(button => {
     }
     else if (value === "+/-"){
       let number = Number(string);
-      if(number>0){
         number = -number;
-      }
        string = String(number);
     }
     else {
