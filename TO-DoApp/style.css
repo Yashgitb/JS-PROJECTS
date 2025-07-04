@@ -1,0 +1,70 @@
+ *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body{
+            height: 100vh;
+            width: 100%;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold';
+            background-color: antiquewhite;
+        }
+
+        header{
+            height: 15vh;
+            text-align: center;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1{
+            color: white;
+        }
+
+        .task{
+            display: flex;
+        }
+
+        #task-box{
+            margin: 20px;
+            padding: 20px;
+            height: 60px;  /* Height बढ़ाया */
+            font-size: 20px;
+            border: 3px solid brown;
+            border-radius: 20px;    
+            color: rgb(85, 84, 84);
+            width: 300px;  /* Width add किया */
+        }
+
+        .ad-button{  /* Class name fix किया */
+            height: 60px;  /* Height match किया */
+            width: 120px;
+            margin: 20px;
+            background-color: rgb(222, 81, 81);
+            font-size: 20px;
+            border: 3px solid white;
+            border-radius: 15px;    
+            color: white;
+            transition: box-shadow 0.1s;  /* Typo fix किया */
+            cursor: pointer;
+        }
+
+        .ad-button:hover{  /* Class name fix किया */
+            background-color: rgb(195, 22, 22);
+            box-shadow: 5px 5px 15px rgba(231, 231, 231, 0.5);  /* Shadow visible बनाया */
+        }
+
+        .tasks{
+            margin: 40px;    
+        }
+
+        #task{
+            font-size: 18px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
