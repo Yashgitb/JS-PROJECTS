@@ -1,0 +1,102 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 20px;
+  background: #f9f9f9;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  color: #2d3436;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.tab {
+  font-size: 18px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  background-color: #dfe6e9;
+  color: #2d3436;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.tab:hover,
+.tab.active {
+  transform: scale(1.1);
+  background-color: #a29bfe;
+  color: white;
+}
+
+
+.container {
+  max-width: 400px;
+  margin: auto;
+}
+
+.section {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.hidden {
+  display: none;
+}
+
+form input, form button {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+form button {
+  background-color: #00b894;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.output {
+  margin-top: 15px;
+  background-color: #f1f2f6;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+/* Responsive */
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  .tab {
+    font-size: 16px;
+    padding: 8px 14px;
+  }
+
+  form input, form button {
+    font-size: 15px;
+  }
+
+  .output {
+    font-size: 15px;
+  }
+}
