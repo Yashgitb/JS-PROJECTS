@@ -23,8 +23,19 @@ const form = document.querySelector('form');
     let BMI = weight/(height*height);
     BMI = BMI*10000;
     results.innerHTML = `The BMI of the person is ${BMI}`
-    
+    if (BMI < 18.6){
+
+        results.innerHTML = `<span>${BMI}</span><br>The person is underweight`
+        
+    }else if (BMI > 24.9){
+
+        results.innerHTML = `<span>${BMI}</span><br>The person is Overweight`
+
+    }else{
+        results.innerHTML = `<span>${BMI}</span><br>The person is Normal`
+    }
 
 
   });
+
 
