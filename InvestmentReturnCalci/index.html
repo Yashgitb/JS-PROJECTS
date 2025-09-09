@@ -25,8 +25,11 @@
     <div class="section" id="sip">
       <h2>SIP Calculator</h2>
       <form id="sipForm">
+        <label for="sip-monthly">Monthly Investment</label>
         <input type="number" id="sip-monthly" value="25000" required />
+        <label for="sip-rate">Expected Annual Return (%)</label>
         <input type="number" id="sip-rate" value="12" required />
+        <label for="sip-years">Investment Duration (Years)</label>
         <input type="number" id="sip-years" value="10" required />
         <button type="submit">Calculate</button>
       </form>
@@ -37,8 +40,18 @@
     <div class="section hidden" id="fd">
       <h2>FD Calculator</h2>
       <form id="fdForm">
+        <label for="fd-amount">Investment Amount</label>
         <input type="number" id="fd-amount" value="100000" required />
+        <label for="fd-bank">Bank</label>
+        <select id="fd-bank">
+          <option value=""> Select Bank </option>
+          <option value="hdfc">HDFC</option>
+          <option value="sbi">SBI</option>
+          <option value="icici">ICICI</option>
+        </select>
+        <label for="fd-rate">Interest Rate</label>
         <input type="number" id="fd-rate" value="6.5" required />
+        <label for="fd-years">Investment Duration (Years)</label>
         <input type="number" id="fd-years" value="5" required />
         <button type="submit">Calculate</button>
       </form>
@@ -49,8 +62,11 @@
     <div class="section hidden" id="rd">
       <h2>RD Calculator</h2>
       <form id="rdForm">
+        <label for="rd-monthly">Monthly Investment</label>
         <input type="number" id="rd-monthly" value="5000" required />
+        <label for="rd-rate">Interest Rate</label>
         <input type="number" id="rd-rate" value="7" required />
+        <label for="rd-years">Investment Duration (Years)</label>
         <input type="number" id="rd-years" value="5" required />
         <button type="submit">Calculate</button>
       </form>
@@ -61,20 +77,25 @@
     <div class="section hidden" id="gold">
       <h2>Gold Investment</h2>
       <form id="goldForm">
+        <label for="gold-amount">Investment Amount</label>
         <input type="number" id="gold-amount" value="10000" required />
         <input type="number" id="gold-rate" value="8" required />
+        <label for="gold-years">Investment Duration (Years)</label>
         <input type="number" id="gold-years" value="3" required />
         <button type="submit">Calculate</button>
       </form>
       <div class="output" id="goldResult"></div>
     </div>
 
-    <!-- Mutual -->
+    <!-- Mutual Fund-->
     <div class="section hidden" id="mutual">
       <h2>Mutual Fund</h2>
       <form id="mutualForm">
+        <label for="mutual-amount">Investment Amount</label>
         <input type="number" id="mutual-amount" value="15000" required />
+        <label for="mutual-rate">Expected Annual Return (%)</label>
         <input type="number" id="mutual-rate" value="10" required />
+        <label for="mutual-years">Investment Duration (Years)</label>
         <input type="number" id="mutual-years" value="7" required />
         <button type="submit">Calculate</button>
       </form>
