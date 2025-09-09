@@ -8,6 +8,7 @@ function openTab(evt, tabId) {
   evt.target.classList.add('active');
 }
 
+
 // SIP
 document.getElementById('sipForm').addEventListener('submit', function(e) {
   e.preventDefault();
@@ -20,11 +21,12 @@ document.getElementById('sipForm').addEventListener('submit', function(e) {
   const returns = total - invested;
 
   document.getElementById('sipResult').innerHTML = `
-    Invested: ₹${invested.toFixed(0)}<br>
-    Returns: ₹${returns.toFixed(0)}<br>
-    Total: ₹${total.toFixed(0)}
+    Invested: \u20b9${invested.toFixed(0)}<br>
+    Returns: \u20b9${returns.toFixed(0)}<br>
+    Total: \u20b9${total.toFixed(0)}
   `;
 });
+
 
 // FD
 document.getElementById('fdForm').addEventListener('submit', function(e) {
@@ -36,11 +38,12 @@ document.getElementById('fdForm').addEventListener('submit', function(e) {
   const returns = total - p;
 
   document.getElementById('fdResult').innerHTML = `
-    Invested: ₹${p}<br>
-    Returns: ₹${returns.toFixed(0)}<br>
-    Total: ₹${total.toFixed(0)}
+    Invested: \u20b9${p}<br>
+    Returns: \u20b9${returns.toFixed(0)}<br>
+    Total: \u20b9${total.toFixed(0)}
   `;
 });
+
 
 // RD
 document.getElementById('rdForm').addEventListener('submit', function(e) {
@@ -54,11 +57,12 @@ document.getElementById('rdForm').addEventListener('submit', function(e) {
   const total = invested + interest;
 
   document.getElementById('rdResult').innerHTML = `
-    Invested: ₹${invested}<br>
-    Returns: ₹${interest.toFixed(0)}<br>
-    Total: ₹${total.toFixed(0)}
+    Invested: \u20b9${invested}<br>
+    Returns: \u20b9${interest.toFixed(0)}<br>
+    Total: \u20b9${total.toFixed(0)}
   `;
 });
+
 
 // Gold
 document.getElementById('goldForm').addEventListener('submit', function(e) {
@@ -71,11 +75,12 @@ document.getElementById('goldForm').addEventListener('submit', function(e) {
   const total = p + interest;
 
   document.getElementById('goldResult').innerHTML = `
-    Invested: ₹${p}<br>
-    Returns: ₹${interest.toFixed(0)}<br>
-    Total: ₹${total.toFixed(0)}
+    Invested: \u20b9${p}<br>
+    Returns: \u20b9${interest.toFixed(0)}<br>
+    Total: \u20b9${total.toFixed(0)}
   `;
 });
+
 
 // Mutual Fund
 document.getElementById('mutualForm').addEventListener('submit', function(e) {
@@ -88,8 +93,30 @@ document.getElementById('mutualForm').addEventListener('submit', function(e) {
   const returns = total - p;
 
   document.getElementById('mutualResult').innerHTML = `
-    Invested: ₹${p}<br>
-    Returns: ₹${returns.toFixed(0)}<br>
-    Total: ₹${total.toFixed(0)}
+    Invested: \u20b9${p}<br>
+    Returns: \u20b9${returns.toFixed(0)}<br>
+    Total: \u20b9${total.toFixed(0)}
   `;
 });
+
+// FD bank ROI auto-fill (fetch local roi.json and set fd-rate)
+(function attachFDBankListener(){
+  const fdBankSelect = document.getElementById('fd-bank');
+  if (!fdBankSelect) return;
+  fdBankSelect.addEventListener('change', function() {
+    const bank = this.value;
+    if (!bank) return;
+    fetch('roi.json')
+      .then(res => {
+        if (!res.ok) throw new Error('Failed to load ROI data');
+        return res.json();
+      })
+      .then(data => {
+        if (data && data[bank] !== undefined) {
+          const rateInput = document.getElementById('fd-rate');
+          if (rateInput) rateInput.value = data[bank];
+        }
+      })
+      .catch(err => console.error('Error fetching ROI:', err));
+  });
+})();
